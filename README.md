@@ -1,3 +1,42 @@
+
+
+# ICSE-2012-JetBrains-MPS
+Demonstration on how to create language extension to mbeddr C using JetBrains MPS.
+
+This repository is contains information related to the tool JetBrains MPS presented in the 34th International Conference on Software Engineering (ICSE), 2012. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2337447).
+
+This repository _is not_ the original repository for this tool. Here are some links to the original project:
+* [The Official Project Page for the executable binary file of JetBrains MPS] (https://www.jetbrains.com/mps/)
+* [The Official Project Page for mbeddr C ](http://mbeddr.com/)
+* A Video of the Tool which shows how to create a language extension
+  * [Part - 1](https://www.youtube.com/watch?v=H3UMKp99p3w)
+  * [Part - 2](https://www.youtube.com/watch?v=lgAw52xK14U)
+
+In this repository, for ExampleTool you will find:
+* :white_check_mark: Source code
+* :white_check_mark: The original tool
+
+This repository was constructed by [Ramakant Moka](https://github.com/ramakantmoka) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to  [Markus Voelter](http://www.voelter.de/) and [Vaclav Pech](http://www.vaclavpech.eu/) for their help in establishing this repository. 
+
+## Instructions
+
+* Download and install JetBrains MPS from [here] (https://www.jetbrains.com/mps/download/)
+* To install the distribution of mbeddr C, download the distribution ZIP file from the mbeddr [GitHub release                  page](https://github.com/mbeddr/mbeddr.core/releases). This ZIP file contains the mbeddr plugins for MPS. After unzipping,   please take all folders inside the plugins directory and copy them into the plugins directory of your MPS installation.      Note that there is also a plugin (without the 's')directory under MPS. So, for example, after copying, there should be a     $MPS_DIR$/plugins/mbeddr.core directory.
+* Follow the steps as mentioned in the above videos to create a language extension to C.
+* To extend core C, import all the core libraries i.e., com.mbeddr.core.* into the created project.
+
+## Attribution
+
+Authors of tool: Dr. Markus Voelter and Mr. Vaclav Pech.
+Thanks to Mr. Vaclav Pech for his help in establishing this repository.
+
+
+
+
+
+
+
+
 JetBrains MPS
 =============
 
