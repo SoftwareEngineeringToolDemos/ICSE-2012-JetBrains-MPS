@@ -13,8 +13,8 @@ This repository _is not_ the original repository for this tool. Here are some li
   * [Part - 2](https://www.youtube.com/watch?v=lgAw52xK14U)
 
 In this repository, for ExampleTool you will find:
-* :white_check_mark: Source code
-* :white_check_mark: The original tool
+* :white_check_mark: [Source code](https://github.com/JetBrains/MPS)
+* :white_check_mark: [The original tool] (https://www.jetbrains.com/mps/download/)
 
 This repository was constructed by [Ramakant Moka](https://github.com/ramakantmoka) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to  [Markus Voelter](http://www.voelter.de/) and [Vaclav Pech](http://www.vaclavpech.eu/) for their help in establishing this repository. 
 
