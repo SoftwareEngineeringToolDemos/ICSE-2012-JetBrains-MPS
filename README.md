@@ -12,7 +12,7 @@ This repository _is not_ the original repository for this tool. Here are some li
   * [Part - 1](https://www.youtube.com/watch?v=H3UMKp99p3w)
   * [Part - 2](https://www.youtube.com/watch?v=lgAw52xK14U)
 
-In this repository, for JetBrains MPS you will find:
+In this repository, for JetBrains MPS, you will find:
 * :white_check_mark: [Source code](https://github.com/JetBrains/MPS)
 * :white_check_mark: [The original tool] (https://www.jetbrains.com/mps/download/)
 
