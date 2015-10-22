@@ -1,7 +1,7 @@
 
 
 # ICSE-2012-JetBrains-MPS
-Demonstration on how to create language extension to mbeddr C using JetBrains MPS.
+Demonstration on how to create a language extension to mbeddr C using JetBrains MPS.
 
 This repository is contains information related to the tool JetBrains MPS presented in the 34th International Conference on Software Engineering (ICSE), 2012. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2337447).
 
