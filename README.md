@@ -8,7 +8,7 @@ This repository is contains information related to the tool JetBrains MPS presen
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The Official Project Page for the executable binary file of JetBrains MPS] (https://www.jetbrains.com/mps/)
 * [The Official Project Page for mbeddr C ](http://mbeddr.com/)
-* A Video of the Tool which shows how to create a language extension
+* A video of the tool which shows how to create a language extension:
   * [Part - 1](https://www.youtube.com/watch?v=H3UMKp99p3w)
   * [Part - 2](https://www.youtube.com/watch?v=lgAw52xK14U)
 
