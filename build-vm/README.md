@@ -1,12 +1,6 @@
-# Contents of build-vm folder
-
 In this folder, you will find:
 
 * **Vagrantfile** - Contains the vagrant script to load the Ubuntu 14.04 Desktop VM on VirtualBox with a default memory of 2048 MB
-
-# Minimum Requirements for using this Vagrant Script
-1. Vagrant pre-installed.
-2. VirtualBox pre-installed.
 
 # Steps to create the VM using Vagrant
 
@@ -26,3 +20,16 @@ As part of the load process, the following is loaded in the VM (as part of the V
   * Default username: *vagrant*
   * Default password: *vagrant*
 2. Java 8.
+
+# Acknowledgements
+
+Used vagrant virtual box image of [64 bit ubuntu](https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1404-desktop).
+
+#References:
+[Vagrant Documentation](https://docs.vagrantup.com/v2/getting-started/)
+
+[Vagrant Blog](https://www.vagrantup.com/blog.html)
+
+[Tutorial to install java](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get)
+
+[Ubuntu Boxcutter 64bit Virtual Box](https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1404-desktop)
