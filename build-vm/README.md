@@ -22,5 +22,7 @@ Please wait for the vagrant script to complete executing before using the VM.
 
 As part of the load process, the following is loaded in the VM (as part of the Vagrant script)
 
-1. Java 8.
-
+1. Ubuntu Desktop 14.04.
+  * Default username: *vagrant*
+  * Default password: *vagrant*
+2. Java 8.
