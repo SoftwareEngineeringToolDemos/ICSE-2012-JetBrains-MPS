@@ -23,7 +23,7 @@ As part of the load process, the following is loaded in the VM (as part of the V
 
 # Acknowledgements
 
-Used vagrant virtual box image of [64 bit ubuntu](https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1404-desktop).
+Used vagrant virtual box image of [boxcutter/ubuntu1404-desktop](https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1404-desktop).
 
 #References:
 [Vagrant Documentation](https://docs.vagrantup.com/v2/getting-started/)
