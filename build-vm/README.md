@@ -1,6 +1,7 @@
 In this folder, you will find:
 
 * **Vagrantfile** - Contains the vagrant script to load the Ubuntu 14.04 Desktop VM on VirtualBox with a default memory of 2048 MB
+* **README.md**  - Contains the steps to create and start  VM using vagrant, details about VM, acknowledgements and references
 
 # Steps to create the VM using Vagrant
 
