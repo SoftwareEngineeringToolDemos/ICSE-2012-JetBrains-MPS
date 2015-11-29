@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
    config.vm.provider "virtualbox" do |vb| 
     vb.name = "Craven-rmoka-JetbrainsMPS"
      vb.gui = true  
-     vb.memory = "3072"
+     vb.memory = "2048"
 	 # Disable USB
      vb.customize ["modifyvm", :id, "--usb", "off"]
      vb.customize ["modifyvm", :id, "--usbehci", "off"]
