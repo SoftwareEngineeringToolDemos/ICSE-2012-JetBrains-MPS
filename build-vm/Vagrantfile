@@ -1,17 +1,91 @@
+
 Vagrant.configure(2) do |config|
   
-   config.vm.box = "boxcutter/ubuntu1404-desktop" 
+   config.vm.box = "nritholtz/ubuntu-14.04.1"
    config.vm.box_check_update = false
    config.vm.provider "virtualbox" do |vb| 
+    vb.name = "Craven-rmoka-JetbrainsMPS"
      vb.gui = true  
-     vb.memory = "2048"
+     vb.memory = "3072"
+	 # Disable USB
+     vb.customize ["modifyvm", :id, "--usb", "off"]
+     vb.customize ["modifyvm", :id, "--usbehci", "off"]
    end
  
    config.vm.provision "shell", inline: <<-SHELL
-   sudo add-apt-repository -y ppa:webupd8team/java
-   sudo apt-get update
-   echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
-   sudo apt-get install -y oracle-java8-installer
-   sudo reboot
+    
+	# Installing Oracle Java 8
+	 sudo add-apt-repository -y ppa:webupd8team/java
+	 sudo apt-get update
+     echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+     sudo apt-get install -y oracle-java8-installer
+	 
+     # Download Jetbrains MPS tool from the official website
+	 cd /home/vagrant/Desktop/
+	 sudo wget -O /home/vagrant/Desktop/MPS-3.2.3.tar.gz http://download.jetbrains.com/mps/32/MPS-3.2.3.tar.gz
+	 sudo chown -R vagrant /home/vagrant/Desktop/
+	 tar -zxvf MPS-3.2.3.tar.gz
+	 sudo rm -f "/home/vagrant/Desktop/MPS-3.2.3.tar.gz"
+	 
+     # Download mbeddr C language plugis from the official website
+	 sudo wget -O /home/vagrant/Desktop/com.mbeddr.allInOne.zip https://github.com/mbeddr/mbeddr.core/releases/download/1.0-RC1/com.mbeddr.allInOne.zip
+	 unzip com.mbeddr.allInOne.zip
+	 sudo rm -f "/home/vagrant/Desktop/com.mbeddr.allInOne.zip"
+	 
+     # Copy the mbeddr C language plugins into the plugins directory of JetbrainsMPS tool
+	 sudo chown -R vagrant /home/vagrant/Desktop/
+	 cp -a /home/vagrant/Desktop/plugins/. "/home/vagrant/Desktop/MPS 3.2/plugins/"
+	 rm -rf /home/vagrant/Desktop/plugins
+	 
+	 # Get the contents from Github repository which has the relavant files including the sample project
+	 sudo wget -O /home/vagrant/Desktop/master.zip https://github.com/ramakantmoka/SoftwareEngineeringProjectCode/archive/master.zip
+	 sudo chown -R vagrant /home/vagrant/Desktop/master.zip
+	 cd /home/vagrant/Desktop/
+	 unzip master.zip
+	 sudo rm -f "/home/vagrant/Desktop/master.zip"
+	 
+     # Copy readme, installation, licenses, how-to video links to VM desktop 
+	 cp -r /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/Installation.txt /home/vagrant/Desktop
+	 cp -r /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/Licensefile.txt /home/vagrant/Desktop
+	 cp -r /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/Readme.txt /home/vagrant/Desktop
+	 cp -r /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/youtube.desktop /home/vagrant/Desktop
+
+     # Extract the sample project code
+	 cd /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master	 
+	 tar -zxvf /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/JetbrainsMPSLangExtDemo.tar.gz
+	 
+     # Add JetbrainsMPS tool to startup applications of VM
+	 sudo mkdir /home/vagrant/.config/autostart
+	 cp -r /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/mps.sh.desktop /home/vagrant/.config/autostart
+	 sudo chmod -R 777 /home/vagrant/.config/autostart
+	 
+     # Create workspace folder for JetbrainsMPS projects and put the sample project in it.
+	 mkdir /home/vagrant/MPSProjects	
+	 cp -r /home/vagrant/Desktop/SoftwareEngineeringProjectCode-master/home/vagrant/MPSProjects/JetbrainsMPSLangExtDemo /home/vagrant/MPSProjects
+	 sudo chmod -R 777 /home/vagrant/MPSProjects
+     
+     # Initial config of the tool	 
+	 sudo wget -0 /home/vagrant/MPS32.tar.gz https://googledrive.com/host/0B6JCaBtQgKl7WVduaWdiUUpFUWs/MPS32.tar.gz
+	 sudo chown -R vagrant /home/vagrant/MPS32.tar.gz
+	 tar -zxvf /home/vagrant/MPS32.tar.gz
+	 cp -r /home/vagrant/home/vagrant/.MPS32 "/home/vagrant/"
+	 sudo rm -rf /home/vagrant/home	 
+	 
+     # Disable screen lock, screensaver and update manager. Remove deja-dup
+     wget https://github.com/ramakantmoka/SoftwareEngineeringProjectCode/raw/master/screenlock.sh -O /home/vagrant/Downloads/screenlock.sh
+     sudo chmod a+rwx "/home/vagrant/Downloads/screenlock.sh"
+     wget https://github.com/ramakantmoka/SoftwareEngineeringProjectCode/raw/master/screenlock.desktop -O "/home/vagrant/.config/autostart/screenlock.desktop"
+     wget https://github.com/ramakantmoka/SoftwareEngineeringProjectCode/raw/master/update-notifier.desktop -O "/home/vagrant/.config/autostart/update-notifier.desktop"     
+     sudo apt-get remove -y deja-dup
+     
+     sudo chown -R vagrant "/home/vagrant/Desktop"
+	 sudo chmod -R a+rwx "/home/vagrant/Desktop"
+     
+     # Install Adobe Flash Player plugin to watch Youtube video of the tutorial on how to use the tool.
+     sudo apt-get install -y flashplugin-installer 
+	 
+     # Delete the folder downloaded from Github
+	 sudo rm -rf "/home/vagrant/Desktop/SoftwareEngineeringProjectCode-master"	
+	 sudo reboot
    SHELL
 end
