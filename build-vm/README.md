@@ -35,3 +35,7 @@ Used vagrant virtual box image of [nritholtz/ubuntu-14.04.1](https://atlas.hashi
 [Tutorial to install java](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get)
 
 [Ubuntu nritholtz 32bit Virtual Box](https://atlas.hashicorp.com/nritholtz/boxes/ubuntu-14.04.1)
+
+[Remove Screen Lock](http://askubuntu.com/questions/647976/ubuntu-14-04-disable-password-lock-when-waking-from-screensaver-for-all-users)
+
+[Turn Off Automatic Updates](http://muzso.hu/2011/01/05/how-to-turn-off-automatic-updates-in-ubuntu)
