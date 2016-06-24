@@ -14,8 +14,8 @@ This repository _is not_ the original repository for this tool. Here are some li
 
 In this repository, for JetBrains MPS, you will find:
 * :white_check_mark: [Source code](https://github.com/JetBrains/MPS)
-* :white_check_mark: [The original tool] (https://www.jetbrains.com/mps/download/)
-* :white_check_mark: [Virtual machine containing tool](https://drive.google.com/open?id=0B6JCaBtQgKl7RURNdGMtR0FLMFk)
+* :x: Executable tool (not available)
+* :white_check_mark: [Virtual machine containing tool](http://go.ncsu.edu/SE-tool-VMs)
 
 This repository was constructed by [Ramakant Moka](https://github.com/ramakantmoka) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to  [Markus Voelter](http://www.voelter.de/) and [Vaclav Pech](http://www.vaclavpech.eu/) for their help in establishing this repository. 
 
